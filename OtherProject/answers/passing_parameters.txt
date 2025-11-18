@@ -7,4 +7,4 @@ public static void swap(Student s1, Student s2) {
     s2.setStudentId(temp1);
     s2.setName(temp2);
 }
-- Sơ đồ minh họa: ban đầu s1 trỏ tới đối tượng (1, "A") và s2 trỏ tới đối tượng (2, "B"). Khi bước vào swap, giá trị của s1 được lưu vào temp1 = 1 và temp2 = "A". Sau đó, các thuộc tính của s1 được gán bằng thuộc tính của s2, khiến cả hai cùng mang giá trị (2, "B"). Cuối cùng, s2 được gán lại bằng các giá trị tạm temp1 và temp2, nên trở thành (1, "A"). Như vậy việc hoán đổi được thực hiện thành công thông qua hoán đổi thuộc tính thay vì hoán đổi tham chiếu.
+- Sơ đồ minh họa: ban đầu s1 trỏ tới đối tượng (1, "A") và s2 trỏ tới đối tượng (2, "B"). Khi bước vào swap, giá trị của s1 được lưu vào temp1 = 1 và temp2 = "A". Sau đó, các thuộc tính của s1 được gán bằng thuộc tính của s2, khiến cả hai cùng mang giá trị (2, "B"). Cuối cùng, s2 được gán lại bằng các giá trị tạm temp1 và temp2, nên trở thành (1, "A"). Như vậy việc hoán đổi được thực hiện thành công thông qua hoán đổi thuộc tính thay vì hoán đổi tham chiếu. 
