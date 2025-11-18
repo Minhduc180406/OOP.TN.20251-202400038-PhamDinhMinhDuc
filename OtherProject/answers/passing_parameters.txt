@@ -1,0 +1,10 @@
+- Sau khi gọi phương thức swap(s1, s2), tên của hai học sinh không thay đổi vì Java truyền tham trị: khi truyền s1 và s2 vào phương thức, chỉ bản sao của tham chiếu được dùng, nên việc thay đổi bên trong phương thức chỉ tác động lên các bản sao đó, còn s1 và s2 thật sự bên ngoài vẫn giữ nguyên. Để phương thức swap hoạt động đúng, thay vì hoán đổi tham chiếu, ta cần hoán đổi trực tiếp các thuộc tính của hai đối tượng. Cách làm là thêm các getter và setter trong lớp Student, rồi sửa lại phương thức như sau:
+public static void swap(Student s1, Student s2) {
+    int temp1 = s1.getStudentId();
+    String temp2 = s1.getName();
+    s1.setStudentId(s2.getStudentId());
+    s1.setName(s2.getName());
+    s2.setStudentId(temp1);
+    s2.setName(temp2);
+}
+- Sơ đồ minh họa: ban đầu s1 trỏ tới đối tượng (1, "A") và s2 trỏ tới đối tượng (2, "B"). Khi bước vào swap, giá trị của s1 được lưu vào temp1 = 1 và temp2 = "A". Sau đó, các thuộc tính của s1 được gán bằng thuộc tính của s2, khiến cả hai cùng mang giá trị (2, "B"). Cuối cùng, s2 được gán lại bằng các giá trị tạm temp1 và temp2, nên trở thành (1, "A"). Như vậy việc hoán đổi được thực hiện thành công thông qua hoán đổi thuộc tính thay vì hoán đổi tham chiếu.
